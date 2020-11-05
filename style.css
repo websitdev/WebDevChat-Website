@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>CREATIVE</title>
+    </head>
+    <body>
+    <h1>NEON BUTTONS</h1>
+    <a href="">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        GLOWING ☄️
+    </a>
+    <a href="">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        BUTTONs🛎️
+    </a>
+    <a href="">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        AIM[2000UpVotes:)]
+    </a>
+      <div class="glowing">
+        <span style="--i:1"></span>
+        <span style="--i:2"></span>
+        <span style="--i:3"></span>
+    </div>
+    <div class="glowing">
+        <span style="--i:1"></span>
+        <span style="--i:2"></span>
+        <span style="--i:3"></span>
+    </div>
+    <div class="glowing">
+        <span style="--i:1"></span>
+        <span style="--i:2"></span>
+        <span style="--i:3"></span>
+    </div>
+    <div class="glowing">
+        <span style="--i:1"></span>
+        <span style="--i:2"></span>
+        <span style="--i:3"></span>
+    </div>
+    <div class="glowing">
+        <span style="--i:1"></span>
+        <span style="--i:2"></span>
+        <span style="--i:3"></span>
+    </div>
+  
+</body>
+</html>

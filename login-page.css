@@ -9,12 +9,12 @@ body {
 }
 
 body {
-    font-family: poppins;
     padding: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     background-image: url('images/login-page-background.png');
+    font-family: poppins;
 }
 
 main {

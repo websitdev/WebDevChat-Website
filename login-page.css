@@ -1,0 +1,125 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('images/login-page-background.png');
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    max-width: 1000px;
+    height: 90vh;
+    max-height: 700px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 5px 5px 15px;
+}
+
+#section1 {
+    flex-grow: 0.5;
+    background-color: rgb(0, 155, 155);
+    background-image: url('images/login-page-background.png');
+    background-blend-mode: color-burn;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    box-shadow: inset -5px -5px 10px rgb(0, 48, 48);
+}
+
+#section2 {
+    flex-grow: 1;
+    background-image: linear-gradient(rgb(234, 0, 255), rgb(132, 0, 255));
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-shadow: inset -5px -5px 10px rgb(41, 0, 41);
+}
+
+form {
+    max-width: 350px;
+    text-align: center;
+}
+
+.form-heading {
+    display: inline-block;
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* input {
+    width: 100%;
+    padding: 15px;
+    border-radius: 3em;
+    border: none;
+    margin-bottom: 10px;
+    box-shadow: inset -2px -2px 5px;
+} */
+
+hr {
+    border: none;
+    border-top: 1px solid white;
+}
+
+.other-accounts {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.other-accounts img {
+    margin-right: 20px;
+    height: 40px;
+    width: 40px;
+    padding: 2px;
+    background-color: white;
+    border-radius: 20px;
+    transition: transform .2s;
+}
+
+.other-accounts img:hover {
+    transform: scale(1.2);
+}
+
+.other-accounts img:last-child {
+    margin-right: 0;
+}
+
+.form-toggle {
+    font-size: 1.1em;
+}
+
+.form-toggle>span {
+    font-weight: bold;
+    color: aqua;
+    cursor: pointer;
+}
+
+@media screen and (min-width: 900px) {
+    main {
+        flex-direction: row;
+    }
+    #section1 {
+        width: 1px;
+    }
+    #section2 {
+        width: 1px;
+    }
+}

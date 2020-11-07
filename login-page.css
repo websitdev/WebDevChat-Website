@@ -14,7 +14,6 @@ body {
     align-items: center;
     justify-content: center;
     background-image: url('images/login-page-background.png');
-    font-family: poppins;
 }
 
 main {
@@ -40,6 +39,7 @@ main {
     justify-content: center;
     padding: 20px;
     box-shadow: inset -5px -5px 10px rgb(0, 48, 48);
+    font-family: poppins;
 }
 
 #section2 {

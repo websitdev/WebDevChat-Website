@@ -9,6 +9,7 @@ body {
 }
 
 body {
+    font-family: poppins;
     padding: 20px;
     display: flex;
     align-items: center;

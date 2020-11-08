@@ -5,6 +5,7 @@
     <title>Log in - Web dev site</title>
     <link rel="stylesheet" href="assets/css/login-page.css" />
     <link rel="icon" href="images/login-page-icon.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -16,8 +17,8 @@
         <section id="section2">
             <form id="login-form">
                 <span class="form-heading">Log in to WebDevChat</span>
-                <input type="text" name="identity" placeholder="Username or Email" />
-                <input id="passwordd" type="password" name="password" placeholder="Password" /><br>
+                <input class="input" type="text" name="identity" placeholder="Username or Email" />
+                <input class="input" id="passwordd" type="password" name="password" placeholder="Password" /><br>
                 <input type="checkbox" onclick="showpass()">Show Password<br>
                 <input class="input" type="submit" value="Log in" />
                 <hr/>
@@ -32,14 +33,14 @@
             <form id="register-form" hidden>
                 <span class="form-heading">Register</span>
                 <div class="inputs">
-                    <input type="text" name="fname" placeholder="First name" />
-                    <input type="text" name="lname" placeholder="Last name" />
+                    <input class="input" type="text" name="fname" placeholder="First name" />
+                    <input class="input" type="text" name="lname" placeholder="Last name" />
                 </div>
-                <input type="email" name="email" placeholder="Email ID" />
-                <input type="text" name="username" placeholder="Username" />
-                <input id="passworddd" type="password" name="password" placeholder="Password" /><br>
+                <input class="input" type="email" name="email" placeholder="Email ID" />
+                <input class="input" type="text" name="username" placeholder="Username" />
+                <input class="input" id="passworddd" type="password" name="password" placeholder="Password" /><br>
                 <input type="checkbox" onclick="showpasss()">Show Password<br>
-                <input class="input" type="submit" value="Register" />
+                <input class="input" class="input" type="submit" value="Register" />
                 <hr/>
                 <span>Register with</span>
                 <div class="other-accounts">

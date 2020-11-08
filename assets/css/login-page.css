@@ -15,7 +15,7 @@ body {
     background-image: url('../img/login-page/page-background.png');
     background-size: cover;
     background-position: center;
-    font-family: "Times New Roman", Times, serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 15px;
 }
 

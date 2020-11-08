@@ -335,7 +335,7 @@ h1, h2, h3, h4, h5, h6 {
 .mobile-nav a:hover, .mobile-nav .active > a, .mobile-nav li:hover > a {
   color: #0b1c39;
   text-decoration: none;
-  border-right: 1px dashed #0b1c39;
+  border-right: 2px dashed #0b1c39;
 }
 
 .mobile-nav .drop-down > a:after {

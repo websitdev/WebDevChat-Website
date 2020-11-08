@@ -1,0 +1,58 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Log in - Web dev site</title>
+    <link rel="stylesheet" href="assets/css/login-page.css" />
+    <link rel="icon" href="images/login-page-icon.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <main>
+        <section id="section1">
+            <div style="font-size: 2em; font-weight: bold; margin-bottom: 20px;">Welcome to<br>WebDevChat</div>
+            <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ligula risus, viverra ut eleifend nec, feugiat pretium eros.</div>
+        </section>
+        <section id="section2">
+            <form id="login-form">
+                <span class="form-heading">Log in to WebDevChat</span>
+                <input class="input" type="text" name="identity" placeholder="Username or Email" />
+                <input class="input" id="passwordd" type="password" name="password" placeholder="Password" /><br>
+                <input type="checkbox" onclick="showpass()">Show Password<br>
+                <input class="input" type="submit" value="Log in" />
+                <hr/>
+                <span>Log in with</span>
+                <div class="other-accounts">
+                    <a href="https://google.com"><img src="images/google.png" alt="Google" /></a>
+                    <a href="https://facebook.com"><img src="images/facebook.png" alt="Facebook" /></a>
+                    <a href="https://github.com"><img src="images/github.png" alt="GitHub" /></a>
+                </div>
+                <span class="form-toggle">Not a member? <span onclick="registerFormShow()">Register</span></span>
+            </form>
+            <form id="register-form" hidden>
+                <span class="form-heading">Register</span>
+                <div class="inputs">
+                    <input class="input" type="text" name="fname" placeholder="First name" />
+                    <input class="input" type="text" name="lname" placeholder="Last name" />
+                </div>
+                <input class="input" type="email" name="email" placeholder="Email ID" />
+                <input class="input" type="text" name="username" placeholder="Username" />
+                <input class="input" id="passworddd" type="password" name="password" placeholder="Password" /><br>
+                <input type="checkbox" onclick="showpasss()">Show Password<br>
+                <input class="input" class="input" type="submit" value="Register" />
+                <hr/>
+                <span>Register with</span>
+                <div class="other-accounts">
+                    <a href="https://google.com"><img src="images/google.png" alt="Google" /></a>
+                    <a href="https://facebook.com"><img src="images/facebook.png" alt="Facebook" /></a>
+                    <a href="https://github.com"><img src="images/github.png" alt="GitHub" /></a>
+                </div>
+                <span class="form-toggle">Already a member? <span onclick="loginFormShow()">Login</span></span>
+            </form>
+        </section>
+    </main>
+</body>
+<script src="assets/js/login-page.js"></script>
+
+</html>

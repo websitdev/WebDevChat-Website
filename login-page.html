@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="assets/css/login-page.css" />
     <link rel="icon" href="assets/img/login-page/icon.png" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
@@ -15,13 +16,26 @@
             <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ligula risus, viverra ut eleifend nec, feugiat pretium eros.</div>
         </section>
         <section id="section2">
-            <form id="login-form">
+            <form id="login-form" method="post">
                 <span class="form-heading">Log in to WebDevChat</span>
                 <input type="text" name="identity" placeholder="Username or Email" />
                 <div class="pass-input">
                     <input type="password" name="password" placeholder="Password" />
                     <button onclick="togglePasswordView(this)"><img src="assets/img/icons/eye-closed.png"/></button>
                 </div>
+                <script src="https://www.google.com/recaptcha/api.js"></script>
+                <script>
+                  function onSubmit(token) {
+                    document.getElementById("demo-form").submit();
+                  }
+                </script>
+                <button class="g-recaptcha"
+                data-sitekey="6LdcxeAZAAAAAK_wHDt7AW7n8ejKjxaxg8nQwTbt" 
+                data-callback='onSubmit'
+                data-action='submit'>Submit</button>
+
+
+
                 <input type="submit" value="Log in" />
                 <hr/>
                 <span>Log in with</span>

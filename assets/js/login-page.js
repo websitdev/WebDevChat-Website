@@ -29,7 +29,7 @@ function registerFormShow() {
         login_form.setAttribute('hidden', '');
         register_form.removeAttribute('hidden');
     }, 300);
-    document.title = "Register - Web dev site";
+    document.title = "WebDevChat || Register Page";
 }
 
 function loginFormShow() {
@@ -39,7 +39,7 @@ function loginFormShow() {
         register_form.setAttribute('hidden', '');
         login_form.removeAttribute('hidden');
     }, 300);
-    document.title = "Log in - Web dev site";
+    document.title = "WebDevChat || Login Page";
 }
 
 function togglePasswordView(elem) {

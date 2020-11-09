@@ -404,11 +404,17 @@ It makes sure the google spider that is crawling it for SEO purpose sees fresh c
         <div class="row faq-item d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
           <div class="col-lg-5">
             <i class="bx bx-help-circle"></i>
-            <h4>Non consectetur a erat nam at lectus urna duis?</h4>
+            <h4>What makes Web Dev different from other web design agencies?</h4>
           </div>
           <div class="col-lg-7">
             <p>
-              Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
+              Same questions on many lips. There are many competent web design agencies in Telegram alone, not to talk of worldwide.
+
+It would be very difficult to standout if you don’t increase your standard
+
+Back to the question how do we standout? Number one reason is the quality of our design work and listening ear to our client instructions on each stage of the design.
+
+All websites we created are responsive on mobile, attractive, easy to edit and represent your brand
             </p>
           </div>
         </div><!-- End F.A.Q Item-->
@@ -416,11 +422,17 @@ It makes sure the google spider that is crawling it for SEO purpose sees fresh c
         <div class="row faq-item d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
           <div class="col-lg-5">
             <i class="bx bx-help-circle"></i>
-            <h4>Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque?</h4>
+            <h4>Ola, how much do you charge per project, I have checked everywhere seems l cant find pricing</h4>
           </div>
           <div class="col-lg-7">
             <p>
-              Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim.
+              Our pricing varies and directly related to the project scope, duration and some other factors
+
+Since some have e.g. logo, content, graphic, hosting and domain while another person might just have one or two from it.
+
+Reason we prefer if you tell us about project first in our contact form, then one of our team members will reply you within 24hrs
+
+Here, we’ll give you a comprehensive proposal after learning as much as possible about your project
             </p>
           </div>
         </div><!-- End F.A.Q Item-->

@@ -29,6 +29,7 @@ function registerFormShow() {
         login_form.setAttribute('hidden', '');
         register_form.removeAttribute('hidden');
     }, 300);
+    document.title = "Register - Web dev site";
 }
 
 function loginFormShow() {
@@ -38,6 +39,7 @@ function loginFormShow() {
         register_form.setAttribute('hidden', '');
         login_form.removeAttribute('hidden');
     }, 300);
+    document.title = "Log in - Web dev site";
 }
 
 function togglePasswordView(elem) {
@@ -45,10 +47,12 @@ function togglePasswordView(elem) {
     if (pwd_box.hasAttribute('show')) {
         pwd_box.type = 'password'; //hide password
         pwd_box.removeAttribute('show');
-        elem.querySelector('img').src = 'assets/img/icons/eye-closed.png';
+        elem.classList.remove('bx-hide');
+        elem.classList.add('bx-show');
     } else {
         pwd_box.type = 'text'; //show password
         pwd_box.setAttribute('show', '');
-        elem.querySelector('img').src = 'assets/img/icons/eye-opened.png';
+        elem.classList.remove('bx-show');
+        elem.classList.add('bx-hide');
     }
 }

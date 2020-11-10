@@ -959,7 +959,7 @@ section {
   height: 64px;
   background: #0076ff;
   border-radius: 5px;
-  transition: all .3s ease-out 0s;
+  transition: all .5s ease-out 0s;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -983,7 +983,7 @@ section {
   width: 100%;
   background: #73a9e6;
   border-radius: 5px;
-  transition: all .3s ease-out 0s;
+  transition: all .5s ease-out 0s;
   transform: translateZ(-1px);
   z-index: 1;
 }

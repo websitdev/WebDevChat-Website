@@ -1,4 +1,7 @@
 <?php
+
+include_once 'dbh.inc.php';
+
 //register handeling
 
 //this is a fake db it will be changed to mysql later

@@ -15,14 +15,14 @@ $form_pwd=$_POST["pwd"];//pwd stands for password
 $form_pwd_conf=$POST["pwd_conf"];
 
 //ceck if is in db
-public function in_db(){
+function in_db(){
     $used=0;
     for ($i=0; $i<sizeof($db_userid);$i++) {
         for ($username=0; $username <sizeof($db_userid); $username++) {
-            if($db_username[$username]==$form_username){echo "usernmame used";$used++}
+            if($db_username[$username]==$form_username){echo "usernmame used";$used++;}
         }
         for ($email=0;$email <sizeof($db_userid); $email++) {
-            if($db_username[$username]==$form_username){echo "email used";$used++}
+            if($db_username[$username]==$form_username){echo "email used";$used++;}
         }
  }
  return $used;
@@ -36,10 +36,14 @@ if ($form_pwd==$form_pwd_conf) {
     if (in_db()==0) {
         echo "you are registered";
     }else {
-        "email or username is used"
+        echo"email or username is used";
     }
 
 }
 else {
     echo "error passwords dont mach";
+    echo "<br>";
+    echo $form_pwd;
+    echo "<br>";
+    echo $form_pwd_conf;
 }

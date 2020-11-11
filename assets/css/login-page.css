@@ -107,8 +107,15 @@ input[type='submit'] {
 }
 
 input[type='submit']:hover {
-    background-color: #0058bd;
+    background-color: #0b2341;
 }
+
+/* @media (max-width: 720px) {
+  .heading {
+    margin-right: 20px;
+    font-size: 25px;
+  }
+} */
 
 input[type='submit']:active {
     transform: scale(0.85);
@@ -168,6 +175,10 @@ hr {
     transition: .3s;
     text-decoration: none;
 }
+
+/* #loginid:hover {
+  background-color: #0074f9;
+} */
 
 .other-accounts a:hover {
     transform: scale(1.2);

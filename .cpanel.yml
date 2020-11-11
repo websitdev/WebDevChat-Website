@@ -1,5 +1,6 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/user/public_html/
-    - /bin/cp -R images $DEPLOYPATH
+    - shopt -s extglob
+    - export DEPLOYPATH=/home/webdvxms/public_html/
+    - /bin/cp -R /home/webdvxms/repositories/WebDevChat-Website/* $DEPLOYPATH

@@ -17,9 +17,9 @@
         <section id="section2">
             <form id="login-form" method="POST" action="login.php">
                 <span class="heading">Log in to WebDevChat</span>
-                <input type="text" name="identity" placeholder="Username or Email" />
+                <input type="text" name="identity" placeholder="Username or Email" required/>
                 <div class="pass-input">
-                    <input type="password" name="password" placeholder="Password" />
+                    <input type="password" name="pwd" placeholder="Password" required />
                     <button onclick="togglePasswordView(this)" class="bx bx-show" type="button"></button>
                 </div>
                 <input id="loginid" type="submit" value="Log in" />
@@ -34,16 +34,14 @@
                 </div>
                 <span class="form-toggle">Not a member? <a href="javascript:registerFormShow()">Register</a></span>
             </form>
-            <form id="register-form" method="POST" action="register.php" hidden>
+            <form id="register-form" method="POST" action="php/register.inc.php" hidden>
                 <span class="heading">Register</span>
-                <div class="inputs">
-                    <input type="text" name="fname" placeholder="First name" />
-                    <input type="text" name="lname" placeholder="Last name" />
-                </div>
-                <input type="email" name="email" placeholder="Email ID" />
-                <input type="text" name="username" placeholder="Username" />
+
+                <input type="email" name="email" placeholder="Email ID" required/>
+                <input type="text" name="username" placeholder="Username" required/>
                 <div class="pass-input">
-                    <input type="password" name="password" placeholder="Password" />
+                    <input type="password" name="pwd" placeholder="Password" required/>
+                    <input type="password" name="pwd_conf" placeholder=" Confirm Password" required/>
                     <button onclick="togglePasswordView(this)" class="bx bx-show" type="button"></button>
                 </div>
                 <input type="submit" value="Register" />

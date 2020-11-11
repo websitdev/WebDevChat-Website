@@ -10,28 +10,21 @@ body {
 
 body {
     min-height: 100vh;
-}
-
-body {
     display: grid;
     align-items: center;
     justify-content: center;
-    background-image: url('../img/login-page/page-background.png');
-    background-position: center;
-    background-size: cover;
     background-color: #f6f9fd;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 button,
 input,
 a {
     border: none;
+    text-decoration: none;
 }
 
-button,
-a,
-span {
+ :not(input) {
     user-select: none;
 }
 
@@ -44,6 +37,7 @@ a:focus {
     display: inline-block;
     font-size: 2em;
     font-weight: bold;
+    text-align: center;
     margin-bottom: 20px;
 }
 
@@ -51,7 +45,7 @@ main {
     display: flex;
     flex-direction: column;
     width: 80vw;
-    height: 80vh;
+    min-height: 80vh;
     max-width: 1000px;
     max-height: 900px;
     box-shadow: 0 0 30px #d6d7d8;
@@ -64,6 +58,7 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     padding: 20px;
 }
 
@@ -82,10 +77,15 @@ form {
     text-align: center;
 }
 
+form>div {
+    margin-bottom: 10px;
+}
+
 input {
     border-radius: 4px;
     box-shadow: 0 0 10px rgba(214, 215, 216, 0.8);
-    margin-bottom: 10px;
+    font-family: inherit;
+    font-size: 1em;
 }
 
 input:not([type='submit']) {
@@ -93,8 +93,46 @@ input:not([type='submit']) {
     padding: 12px 15px;
 }
 
-input:not([type='submit']):focus {
+.err-msg {
+    text-align: left;
+    color: red;
+}
+
+.input-container input:not([type='submit']):focus {
     outline: 2px solid #0074f9;
+    box-shadow: 0 0 10px #0074f9;
+}
+
+.input-container .err-msg {
+    display: none;
+}
+
+@keyframes shake {
+    20% {
+        transform: translateX(-30px);
+    }
+    40% {
+        transform: translateX(30px);
+    }
+    60% {
+        transform: translateX(-30px);
+    }
+    80% {
+        transform: translateX(30px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.input-container-error input {
+    outline: 2px solid red;
+    color: red;
+    animation: shake .5s;
+}
+
+.input-container-error .err-msg {
+    display: block;
 }
 
 input[type='submit'] {
@@ -104,6 +142,7 @@ input[type='submit'] {
     font-size: 1.2em;
     transition: .3s;
     cursor: pointer;
+    margin-bottom: 10px;
 }
 
 input[type='submit']:hover {
@@ -119,20 +158,55 @@ input[type='submit']:hover {
 
 input[type='submit']:active {
     transform: scale(0.85);
-    box-shadow: none;
 }
 
 input[type='submit']:focus {
     outline: none;
 }
 
+input[type='submit']:disabled {
+    background-color: #ced4da;
+    cursor: not-allowed;
+}
+
+input[type='checkbox'] {
+    width: auto;
+    display: none;
+}
+
+input[type='checkbox']+label {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+}
+
+input[type='checkbox']+label::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    box-shadow: 0 0 10px #d6d7d8;
+    border: 1px solid #ced4da;
+    margin-right: 10px;
+    border-radius: 4px;
+}
+
+input[type='checkbox']:checked+label::before {
+    background-color: #0074f9;
+}
+
+input[type='checkbox']:checked+label::before {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20'><polyline points='3,10 8,15 17,5' style='fill:none;stroke-width:2.5;stroke:white;stroke-linecap:round'/></svg>");
+    background-size: cover;
+}
+
 .pass-input {
     position: relative;
-    margin-bottom: 10px;
 }
 
 .pass-input>input {
-    margin-bottom: 0;
+    padding-right: 3em;
 }
 
 .pass-input button {
@@ -143,7 +217,7 @@ input[type='submit']:focus {
     padding: 4px;
     background-color: transparent;
     color: #a4a4a4;
-    font-size: 22px;
+    font-size: 2em;
     border-radius: 4px;
     transition: .3s;
 }
@@ -159,7 +233,7 @@ hr {
 }
 
 .other-accounts {
-    margin: 10px -10px 10px 0;
+    margin: 10px -10px 0 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -198,12 +272,6 @@ hr {
     color: #0058bd;
 }
 
-.inputs {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 10px;
-}
-
 @media screen and (orientation: landscape) {
     main {
         flex-direction: row;
@@ -225,12 +293,10 @@ hr {
 }
 
 @media screen and (max-width:500px) {
-    main {
-        width: 100vw;
-        height: auto;
-        min-height: 80vh;
+    body {
+        justify-content: stretch;
     }
-    .inputs {
-        grid-template-columns: 1fr;
+    main {
+        width: 100%;
     }
 }

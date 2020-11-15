@@ -2,63 +2,110 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Log in - Web dev site</title>
+    <title>WebDevChat || Login Page</title>
     <link rel="icon" href="assets/img/login-page/icon.png" />
-    <link rel="stylesheet" href="assets/css/login-page.css" />
+    <link rel="stylesheet" href="assets/css/login-page/page.css" />
+    <link rel="stylesheet" href="assets/css/login-page/form.css" />
+    <link rel="stylesheet" href="assets/css/login-page/widget.css" />
+    <link rel="stylesheet" href="assets/css/login-page/media-queries.css" />
     <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 </head>
 
 <body>
     <main>
         <section id="section1">
-            <span class="heading">Welcome to<br>WebDevChat</span>
+            <h1>Welcome to<br>WebDevChat</h1>
             <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ligula risus, viverra ut eleifend nec, feugiat pretium eros.</span>
         </section>
         <section id="section2">
-            <form id="login-form" method="POST" action="login.php">
-                <span class="heading">Log in to WebDevChat</span>
-                <input type="text" name="identity" placeholder="Username or Email" required/>
-                <div class="pass-input">
-                    <input type="password" name="pwd" placeholder="Password" required />
-                    <button onclick="togglePasswordView(this)" class="bx bx-show" type="button"></button>
+            <form name="login-form" onsubmit="submitLogin(event)">
+                <h1>Log in</h1>
+                <div class="input-container">
+                    <input type="text" name="identity" placeholder="Username or Email" onchange="validateIdentity(this)" oninput="errorHide(this)" required />
+                    <div class="err-msg"></div>
                 </div>
-                <input id="loginid" type="submit" value="Log in" />
-                <hr/>
+                <div class="input-container">
+                    <div class="pass-input">
+                        <input type="password" name="password" placeholder="Password" oninput="errorHide(this.parentElement)" required />
+                        <button onclick="togglePasswordView(this)" class="bx bx-show" type="button"></button>
+                    </div>
+                    <div class="err-msg"></div>
+                </div>
+                <div style="text-align: left">
+                    <a href="auth/pass-reset.php">Forgot Password</a>
+                </div>
+                <div>
+                    <input type="checkbox" name="remember" id="rem_chk" /><label for="rem_chk">Remember me</label>
+                </div>
+                <input type="submit" value="Log in" name="login-btn" />
+                <hr />
                 <span>Log in with</span>
                 <div class="other-accounts">
-                    <a href="#" class="bx bxl-twitter"></a>
+                    <a href="#" class="bx bxl-google"></a>
                     <a href="#" class="bx bxl-facebook"></a>
                     <a href="#" class="bx bxl-instagram"></a>
                     <a href="#" class="bx bxl-telegram"></a>
                     <a href="#" class="bx bxl-linkedin"></a>
                 </div>
-                <span class="form-toggle">Not a member? <a href="javascript:registerFormShow()">Register</a></span>
+                <span class="form-toggle">Not a member? <a href="javascript:formToggle('login-form', 'register-form')">Register</a></span>
             </form>
-            <form id="register-form" method="POST" action="php/register.inc.php" hidden>
-                <span class="heading">Register</span>
 
-                <input type="email" name="email" placeholder="Email ID" required/>
-                <input type="text" name="username" placeholder="Username" required/>
-                <div class="pass-input">
-                    <input type="password" name="pwd" placeholder="Password" required/>
-                    <input type="password" name="pwd_conf" placeholder=" Confirm Password" required/>
+            <form name="register-form" onsubmit="submitRegister(event)" hidden>
+                <h1>Register</h1>
+                <div class="">
+                    <input type="text" name="name" placeholder="Name" onchange="validateName(this)" oninput="errorHide(this)" required />
+                    <div class="err-msg"></div>
+                </div>
+                <div class="">
+                    <input type="email" name="email" placeholder="Email ID" onchange="validateEmail(this)" oninput="errorHide(this)" required />
+                    <div class="err-msg"></div>
+                </div>
+                <div class="">
+                    <input type="text" name="username" placeholder="Username" onchange="validateUsername(this)" oninput="errorHide(this)" required />
+                    <div class="err-msg"></div>
+                </div>
+                <div class="input-container pass-input">
+                    <input type="password" name="password" placeholder="Password" onchange="getPass1(this)" required />
                     <button onclick="togglePasswordView(this)" class="bx bx-show" type="button"></button>
                 </div>
-                <input type="submit" value="Register" />
-                <hr/>
+                <div class="">
+                    <div class="pass-input">
+                        <input type="password" name="re-password" placeholder="Confirm password" onchange="checkPass(this)" oninput="errorHide(this.parentElement)" required />
+                        <button onclick="togglePasswordView(this)" class="bx bx-show" type="button"></button>
+                    </div>
+                    <div class="err-msg"></div>
+                </div>
+                <input type="submit" value="Register" name="register-btn" />
+                <hr />
                 <span>Register with</span>
                 <div class="other-accounts">
-                    <a href="#" class="bx bxl-twitter"></a>
+                    <a href="#" class="bx bxl-google"></a>
                     <a href="#" class="bx bxl-facebook"></a>
                     <a href="#" class="bx bxl-instagram"></a>
                     <a href="#" class="bx bxl-telegram"></a>
                     <a href="#" class="bx bxl-linkedin"></a>
                 </div>
-                <span class="form-toggle">Already a member? <a href="javascript:loginFormShow()">Login</a></span>
+                <span class="form-toggle">Already a member? <a href="javascript:formToggle('register-form', 'login-form')">Login</a></span>
             </form>
+
+            <div id="spinner">
+                <span class="fa fa-spinner"></span>
+            </div>
         </section>
     </main>
+    <section id="dialog-container">
+        <div>
+            <p>Text</p>
+            <button>OK</button>
+        </div>
+    </section>
 </body>
-<script src="assets/js/login-page.js"></script>
+
+<script src="assets/js/login-page/main.js"></script>
+<script src="assets/js/login-page/form-validation.js"></script>
+<script src="assets/js/login-page/form-send.js"></script>
 
 </html>

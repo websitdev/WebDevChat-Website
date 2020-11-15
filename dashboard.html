@@ -33,6 +33,12 @@
 <script>
     const details_box = document.getElementById("details");
     const credentials = sessionStorage.getItem("user") || localStorage.getItem("user");
+
+    if (credentials === null) {
+        alert("You are not logged in. You will be redirected to the login page...");
+        location.replace("login-page.html");
+    }
+
     const request = new XMLHttpRequest();
 
     request.onreadystatechange = function() {
@@ -48,10 +54,8 @@
                     details_box.innerHTML = `<strong>Username:</strong>&nbsp;${data.username}<br>
 					<strong>Email ID:</strong>&nbsp;${data.email}`;
                 } else {
-                    alert("You are not logged in. Redirecting to login page in 5 seconds...");
-                    setTimeout(() => {
-                        location.replace("login-page.html");
-                    }, 5000);
+                    alert("You are not logged in. You will be redirected to the login page...");
+                    location.replace("login-page.html");
                 }
             } else details_box.innerHTML = "<strong>Something went wrong</strong>";
             details_box.classList.remove("fa", "fa-spinner", "fa-pulse");

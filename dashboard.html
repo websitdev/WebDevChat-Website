@@ -1,0 +1,64 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dashboard</title>
+    <link rel="icon" href="assets/img/dashboard/icon.png" />
+    <link rel="stylesheet" href="assets/css/login-page/page.css" />
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+</head>
+<style>
+    body {
+        padding: 20px;
+        display: block;
+    }
+    
+    #container {
+        background-color: white;
+        box-shadow: 0 0 30px #c6c7c8;
+        padding: 20px;
+    }
+</style>
+
+<body>
+    <div id="container">
+        <h1>This is a sample dashboard</h1>
+        <span id="details" class="fa fa-spinner fa-pulse"></span>
+    </div>
+</body>
+
+<script>
+    const details_box = document.getElementById("details");
+    const credentials = sessionStorage.getItem("user") || localStorage.getItem("user");
+    const request = new XMLHttpRequest();
+
+    request.onreadystatechange = function() {
+        if (this.readyState == 4) {
+            if (this.status == 200) {
+                const data = JSON.parse(this.responseText);
+                if (data.db_err != '') {
+                    details_box.innerHTML = "Could not connect to database";
+                    details_box.style.color = "red";
+                    return;
+                }
+                if (data.login_success) {
+                    details_box.innerHTML = `<strong>Username:</strong>&nbsp;${data.username}<br>
+					<strong>Email ID:</strong>&nbsp;${data.email}`;
+                } else {
+                    alert("You are not logged in. Redirecting to login page in 5 seconds...");
+                    setTimeout(() => {
+                        location.replace("login-page.html");
+                    }, 5000);
+                }
+            } else details_box.innerHTML = "<strong>Something went wrong</strong>";
+            details_box.classList.remove("fa", "fa-spinner", "fa-pulse");
+        }
+    };
+    request.open("POST", "dashboard-backend.php");
+    request.send(credentials);
+</script>
+
+</html>

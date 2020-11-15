@@ -1,0 +1,199 @@
+button,
+input,
+a {
+    border: none;
+    text-decoration: none;
+}
+
+:not(input) {
+    user-select: none;
+}
+
+button:focus,
+a:focus {
+    outline: none;
+}
+
+input {
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(214, 215, 216, 0.8);
+    font-family: inherit;
+    font-size: 1em;
+}
+
+input:not([type='submit']) {
+    width: 100%;
+    padding: 12px 15px;
+}
+
+.input-container,
+.input-container-error {
+    text-align: left;
+}
+
+.input-container input:focus {
+    outline: 2px solid #0074f9;
+    box-shadow: 0 0 10px #0074f9;
+}
+
+.err-msg {
+    color: red;
+}
+
+.input-container .err-msg {
+    display: none;
+}
+
+@keyframes shake {
+    20% {
+        transform: translateX(-30px);
+    }
+    40% {
+        transform: translateX(30px);
+    }
+    60% {
+        transform: translateX(-30px);
+    }
+    80% {
+        transform: translateX(30px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.input-container-error input {
+    outline: 2px solid red;
+    color: red;
+    animation: shake .5s;
+}
+
+.input-container-error .err-msg {
+    display: block;
+}
+
+input[type='submit'],
+#dialog-container button {
+    padding: 10px 30px;
+    background-color: #0074f9;
+    color: white;
+    font-size: 1.2em;
+    transition: .3s;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+input[type='submit']:hover,
+#dialog-container button:hover {
+    background-color: #0058bd;
+}
+
+input[type='submit']:active,
+#dialog-container button:active {
+    transform: scale(0.85);
+}
+
+input[type='submit']:focus,
+#dialog-container button:focus {
+    outline: none;
+}
+
+input[type='checkbox'] {
+    width: auto;
+    display: none;
+}
+
+input[type='checkbox']+label {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+}
+
+input[type='checkbox']+label::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    box-shadow: 0 0 10px #d6d7d8;
+    border: 1px solid #ced4da;
+    margin-right: 10px;
+    border-radius: 4px;
+}
+
+input[type='checkbox']:checked+label::before {
+    background-color: #0074f9;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20'><polyline points='3,10 8,15 17,5' style='fill:none;stroke-width:2.5;stroke:white;stroke-linecap:round'/></svg>");
+    background-size: cover;
+}
+
+.pass-input {
+    position: relative;
+}
+
+.pass-input>input {
+    padding-right: 3em;
+}
+
+.pass-input button {
+    position: absolute;
+    top: 2px;
+    bottom: 2px;
+    right: 2px;
+    padding: 4px;
+    background-color: transparent;
+    color: #a4a4a4;
+    font-size: 2em;
+    line-height: 0;
+    border-radius: 4px;
+    transition: .3s;
+}
+
+.pass-input button:hover {
+    background-color: #d7d7d7;
+    color: black;
+}
+
+#dialog-container {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 10px;
+    background-color: #00000073;
+    display: none;
+    opacity: 0;
+    align-items: center;
+    justify-content: center;
+}
+
+#dialog-container>div {
+    padding: 15px 30px;
+    box-shadow: 2px 2px 10px black;
+    text-align: center;
+    transform: scale(0);
+}
+
+#dialog-container button {
+    margin: 20px 0 0 0;
+    border-radius: 4px;
+}
+
+#spinner {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #00000098;
+    display: none;
+    opacity: 0;
+    align-items: center;
+    justify-content: center;
+}
+
+#spinner>span {
+    font-size: 10em;
+    color: white;
+}

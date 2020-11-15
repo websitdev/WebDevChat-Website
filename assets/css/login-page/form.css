@@ -1,0 +1,57 @@
+form {
+    max-width: 350px;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+}
+
+form:last-child {
+    opacity: 0;
+    transform: scale(0);
+}
+
+form>* {
+    margin-bottom: 10px;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #ced4da;
+    margin: 0;
+}
+
+.other-accounts {
+    margin: 5px -10px 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.other-accounts a {
+    margin: 0 10px 10px 0;
+    font-size: 22px;
+    color: white;
+    background-color: #0b2341;
+    padding: 8px;
+    border-radius: 50%;
+    transition: .3s;
+    text-decoration: none;
+}
+
+.other-accounts a:hover {
+    transform: scale(1.2);
+    background-color: #0074f9;
+}
+
+.form-toggle {
+    font-size: 1.1em;
+}
+
+.form-toggle>a {
+    font-weight: bold;
+    color: #0074f9;
+}
+
+.form-toggle>a:hover {
+    color: #0058bd;
+}

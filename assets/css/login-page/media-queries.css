@@ -1,0 +1,15 @@
+@media screen and (min-width: 800px) {
+    main {
+        display: grid;
+        grid-template-columns: .5fr 1fr;
+    }
+}
+
+@media screen and (max-width:500px) {
+    body {
+        justify-content: stretch;
+    }
+    main {
+        width: auto;
+    }
+}

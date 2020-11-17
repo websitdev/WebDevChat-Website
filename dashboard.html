@@ -31,10 +31,30 @@
 </body>
 
 <script>
-    const details_box = document.getElementById("details");
-    const credentials = sessionStorage.getItem("user") || localStorage.getItem("user");
+    const href = window.location.href;
+    const query_pos = href.indexOf('?');
+    if (query_pos == -1) {
+        alert("No user ID specified");
+        location.replace("index.html");
+    }
+    const userID = href.substr(query_pos + 4);
 
-    if (credentials === null) {
+    const details_box = document.getElementById("details");
+    var credentials = sessionStorage.getItem("users") || localStorage.getItem("users");
+    if (credentials == null) {
+        alert("You are not logged in. You will be redirected to the login page...");
+        location.replace("login-page.html");
+    }
+
+    credentials = JSON.parse(credentials);
+    var id_index = -1;
+    for (i in credentials) {
+        if (credentials[i].id == userID) {
+            id_index = i;
+            break;
+        }
+    }
+    if (id_index == -1) {
         alert("You are not logged in. You will be redirected to the login page...");
         location.replace("login-page.html");
     }
@@ -45,9 +65,10 @@
         if (this.readyState == 4) {
             if (this.status == 200) {
                 const data = JSON.parse(this.responseText);
-                if (data.db_err != '') {
+                if (!data.db_conn_succ) {
                     details_box.innerHTML = "Could not connect to database";
                     details_box.style.color = "red";
+                    details_box.classList.remove("fa", "fa-spinner", "fa-pulse");
                     return;
                 }
                 if (data.login_success) {
@@ -57,12 +78,12 @@
                     alert("You are not logged in. You will be redirected to the login page...");
                     location.replace("login-page.html");
                 }
-            } else details_box.innerHTML = "<strong>Something went wrong</strong>";
+            } else details_box.innerHTML = "<strong style='color:red'>Something went wrong</strong>";
             details_box.classList.remove("fa", "fa-spinner", "fa-pulse");
         }
     };
     request.open("POST", "dashboard-backend.php");
-    request.send(credentials);
+    request.send(JSON.stringify(credentials[id_index]));
 </script>
 
 </html>

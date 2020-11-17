@@ -37,6 +37,7 @@ input:not([type='submit']) {
 }
 
 .err-msg {
+    padding-top: 2px;
     color: red;
 }
 
@@ -196,4 +197,24 @@ input[type='checkbox']:checked+label::before {
 #spinner>span {
     font-size: 10em;
     color: white;
+}
+
+.left {
+    text-align: left;
+}
+
+#saved-logins-view {
+    background-color: #0074f9;
+    color: white;
+    padding: 2px 10px;
+    border-radius: 2em;
+}
+
+.user-element {
+    display: block;
+    padding: 5px 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    box-shadow: 0 0 10px rgba(214, 215, 216, 0.8);
+    cursor: pointer;
 }

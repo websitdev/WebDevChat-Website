@@ -1,19 +1,41 @@
 <?php
-	$response = array('db_err' => '', 'msg_name' => '', 'msg_email' => '', 'msg_uname' => '', 'msg_pass' => '', 'reg_success' => false);
+	$response = array(
+		'db_conn_succ' => true,
+		'name_valid' => true,
+		'email_valid' => true,
+		'uname_valid' => true,
+		'pass_match' => true,
+		'name_uniq' => false,
+		'email_uniq' => false,
+		'uname_uniq' => false,
+		'reg_succ' => false
+	);
 	require("db-connect.php");
 
     $name = htmlspecialchars(trim($_POST['name']));
     $email = htmlspecialchars(trim($_POST['email']));
 	$uname = htmlspecialchars(trim($_POST['username']));
-	$password = htmlspecialchars(trim($_POST['password']));
+	$password = htmlspecialchars(trim($_POST['register-password']));
     $re_pass = htmlspecialchars(trim($_POST['re-password']));
 
-    $response['msg_name'] = preg_match("/^[a-zA-Z-' ]*$/", $name)? "OK" : "Name must not contain digits or special characters";
-    $response['msg_email'] = filter_var($email, FILTER_VALIDATE_EMAIL)? "OK" : "Invalid email ID";
-	$response['msg_uname'] = preg_match("/^[a-zA-Z0-9 ]*$/", $uname)? "OK" : "Invalid username";
-	$response['msg_pass'] = $password == $re_pass? "OK" : "Passwords do not match";
+	if(!preg_match("/^[a-zA-Z-'. ]*$/", $name)) {
+		$response['name_valid'] = false;
+		$response['msg_name'] = "Name must not contain digits or special characters";
+	}
+
+	if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+		$response['email_valid'] = false;
+		$response['msg_email'] = "Invalid email ID";
+	}
+
+	if(!preg_match("/^[a-zA-Z0-9]*$/", $uname)) {
+		$response['uname_valid'] = false;
+		$response['msg_uname'] = "Username must not contain spaces or special characters";
+	}
 	
-	if($response['msg_name'] != 'OK' || $response['msg_email'] != 'OK' || $response['msg_uname'] != 'OK' || $response['msg_pass'] != 'OK') {
+	if($password != $re_pass) $response['pass_match'] = false;
+	
+	if(!$response['name_valid'] || !$response['email_valid'] || !$response['uname_valid'] || !$response['pass_match']) {
 		echo json_encode($response);
 		exit();
 	}
@@ -24,21 +46,17 @@
 	$password = $mysqli -> real_escape_string(password_hash($password, PASSWORD_DEFAULT));
 
 	//Check if credentials are already present in database
-	if($mysqli -> query("SELECT name FROM users WHERE name='$name'") -> num_rows > 0) $response['msg_name'] = "AE";
-	if($mysqli -> query("SELECT email FROM users WHERE email='$email'") -> num_rows > 0) $response['msg_email'] = "AE";
-	if($mysqli -> query("SELECT username FROM users WHERE username='$uname'") -> num_rows > 0) $response['msg_uname'] = "AE";
+	if($mysqli -> query("SELECT email FROM users WHERE email='$email'") -> num_rows == 0) $response['email_uniq'] = true;
+	if($mysqli -> query("SELECT username FROM users WHERE username='$uname'") -> num_rows == 0) $response['uname_uniq'] = true;
 
-	if($response['msg_name'] == "AE" && $response['msg_email'] == "AE" && $response['msg_uname'] == "AE") {
-		echo json_encode($response);
-		exit();
-	} else if($response['msg_email'] == "AE" || $response['msg_uname'] == "AE") {
+	if(!$response['uname_uniq'] || !$response['email_uniq']) {
 		echo json_encode($response);
 		exit();
 	}
 
 	//Create an entry for current user
 	if($mysqli -> query("INSERT INTO users (name, email, username, password) VALUES ('$name', '$email', '$uname', '$password')") === TRUE)
-		$response['reg_success'] = true;
+		$response['reg_succ'] = true;
 
 	echo json_encode($response);
 ?>

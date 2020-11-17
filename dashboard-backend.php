@@ -1,5 +1,5 @@
 <?php
-	$response = array('db_err' => '', 'login_success' => false, 'username' => '', 'email' => '');
+	$response = array('db_conn_succ' => true, 'login_success' => false, 'username' => '', 'email' => '');
 	require("auth/db-connect.php");
 
 	$credentials = json_decode(file_get_contents("php://input"));

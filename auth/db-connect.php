@@ -8,7 +8,7 @@
     $mysqli = new mysqli($db_server_name, $db_username, $db_password, $db_name);
 
     if($mysqli -> connect_errno) {
-        $response['db_err'] = "Could not connect to database at the moment.<br>Please try again later.";
+        $response['db_conn_succ'] = "Could not connect to database at the moment.<br>Please try again later.";
         echo json_encode($response);
         exit();
     }

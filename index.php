@@ -1,4 +1,39 @@
 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>WebDevChat</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="/assets/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="/assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+  <!-- Template Main CSS File -->
+  <link href="/assets/css/style.css" rel="stylesheet">
+
+
+<body>
+<!-- nav loading -->
+	
 <?php require 'components/navbar.php'; ?>
 
   <!-- ======= Hero Section ======= -->
@@ -91,7 +126,7 @@ We help startup companies build highly converting websites</p>
             <p>
               Our company was established since 2017 and have fast grown to become a leading web design company in Telegram.  We are a web design company and online marketing experts helping businesses locally & internationally.
             </p>
-            <a href="#" class="btn-learn-more">Learn More</a>
+            
           </div>
         </div>
 
@@ -213,9 +248,9 @@ We help startup companies build highly converting websites</p>
 
         <div class="row">
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-            <div class="icon-box">
+            <div id="webdesign" class="icon-box">
               <div class="icon"><i class="bx bxl-dribbble"></i></div>
-              <h4><a href="">Web Design</a></h4>
+              <h4><a href="" >Web Design</a></h4>
               <p>Our web design company can offer you the best design services that can take your business to the forefront.
 
 We put the interest of clients at heart, our tactics is digital and our ideas are groundbreaking, our transparency are timeless.</p>
@@ -223,7 +258,7 @@ We put the interest of clients at heart, our tactics is digital and our ideas ar
           </div>
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
-            <div class="icon-box">
+            <div id="webmaintenance" class="icon-box">
               <div class="icon"><i class="bx bx-file"></i></div>
               <h4><a href="">Web Maintenance</a></h4>
               <p>Website maintenance is the technology bound design strategy that will keep your website rich in content.
@@ -233,7 +268,7 @@ It makes sure the google spider that is crawling it for SEO purpose sees fresh c
           </div>
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
-            <div class="icon-box">
+            <div id="leadgeneration" class="icon-box">
               <div class="icon"><i class="bx bx-tachometer"></i></div>
               <h4><a href="">Lead Generation</a></h4>
               <p>Our team can help you generate leads by getting emails and contact details of company that can be interested in your products and services, it is a tested and proven method</p>
@@ -241,7 +276,7 @@ It makes sure the google spider that is crawling it for SEO purpose sees fresh c
           </div>
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100">
-            <div class="icon-box">
+            <div id="marketing" class="icon-box">
               <div class="icon"><i class="bx bx-world"></i></div>
               <h4><a href="">Marketing</a></h4>
               <p>We are a professional social media manager with many years of experience. Our area of expertise is creating and growing a social media accounts professionally</p>
@@ -249,20 +284,13 @@ It makes sure the google spider that is crawling it for SEO purpose sees fresh c
           </div>
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="200">
-            <div class="icon-box">
+            <div id="graphicsdesign" class="icon-box">
               <div class="icon"><i class="bx bx-slideshow"></i></div>
               <h4><a href="">Graphics Design</a></h4>
               <p>Quis consequatur saepe eligendi voluptatem consequatur dolor consequuntur</p>
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="300">
-            <div class="icon-box">
-              <div class="icon"><i class="bx bx-arch"></i></div>
-              <h4><a href="">Content Writing</a></h4>
-              <p>Modi nostrum vel laborum. Porro fugit error sit minus sapiente sit aspernatur</p>
-            </div>
-          </div>
 
         </div>
 
@@ -357,7 +385,7 @@ It makes sure the google spider that is crawling it for SEO purpose sees fresh c
         <div class="text-center">
           <h3>Check Us Out On Telegram</h3>
           <p> We have groups and channel on telegram that you can work with us, be our client or start learning web development</p>
-          <a class="cta-btn" href="#">See Us on Telegram <i class="icofont-telegram"></i></a>
+          <a class="cta-btn" href="https://t.me/WebDevChat">See Us on Telegram <i class="icofont-telegram"></i></a>
         </div>
 
       </div>
@@ -376,20 +404,6 @@ It makes sure the google spider that is crawling it for SEO purpose sees fresh c
 
       </div>
     </section><!-- End Portfolio Section -->
-
-    <!-- ======= Team Section ======= -->
-    <section id="team" class="team section-bg">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Team</h2>
-          <p>Meet Us</p>
-        </div>
-        <h4 class="text-center">Coming Soon<h4/>
-
-      </div>
-    </section><!-- End Team Section -->
-
 
 
     <!-- ======= Frequently Asked Questions Section ======= -->
@@ -490,13 +504,7 @@ Here, we’ll give you a comprehensive proposal after learning as much as possib
           <div class="col-lg-6">
 
             <div class="row">
-              <div class="col-md-12">
-                <div class="info-box">
-                  <i class="bx bx-map"></i>
-                  <h3>Our Address</h3>
-                  <p>Remote Currently</p>
-                </div>
-              </div>
+            	
               <div class="col-md-6">
                 <div class="info-box mt-4">
                   <i class="bx bx-envelope"></i>
@@ -504,13 +512,7 @@ Here, we’ll give you a comprehensive proposal after learning as much as possib
                   <p>info@webdevchat.com<br>contact@webdevchat.com</p>
                 </div>
               </div>
-              <div class="col-md-6">
-                <div class="info-box mt-4">
-                  <i class="bx bx-phone-call"></i>
-                  <h3>Call Us</h3>
-                  <p>+1<br>+1 </p>
-                </div>
-              </div>
+              
             </div>
 
           </div>
@@ -550,5 +552,31 @@ Here, we’ll give you a comprehensive proposal after learning as much as possib
     </section><!-- End Contact Section -->
 
   </main><!-- End #main -->
-
+ 
+<!-- back-to-top icon -->
+<div id="preloader"></div>
+<a href="#" class="back-to-top"><i class="icofont-bubble-up"></i></a>
+ 	
+<!-- footer loading -->
+	
 <?php require 'components/footer.php'; ?>
+
+
+<!-- Vendor JS Files -->
+<script src="/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+<script src="/assets/vendor/php-email-form/validate.js"></script>
+<script src="/assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+<script src="/assets/vendor/counterup/counterup.min.js"></script>
+<script src="/assets/vendor/venobox/venobox.min.js"></script>
+<script src="/assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+<script src="/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+<script src="/assets/vendor/aos/aos.js"></script>
+
+<!-- Template Main JS File -->
+<script src="/assets/js/main.js"></script>
+
+</body>
+
+</html>

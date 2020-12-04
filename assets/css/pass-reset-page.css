@@ -1,0 +1,47 @@
+main {
+    display: block !important;
+    width: unset;
+    max-width: 500px;
+    perspective: 600px;
+}
+
+#section1,
+#section2 {
+    display: block;
+    padding: 20px;
+}
+
+form {
+    width: 100%;
+    margin: 0;
+}
+
+h1 {
+    text-align: start;
+}
+
+form>* {
+    display: block;
+    margin-bottom: 10px;
+}
+
+form>*:last-child {
+    margin-bottom: 0;
+}
+
+form>input[type='submit'] {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.links {
+    display: flex;
+    justify-content: space-between;
+}
+
+#progress {
+    height: 5px;
+    background-color: #0074f9;
+    width: 0px;
+    transition: width .5s;
+}

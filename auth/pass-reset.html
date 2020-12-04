@@ -1,0 +1,80 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Reset password</title>
+    <link rel="icon" href="../assets/img/login-page/icon.png" />
+    <link rel="stylesheet" href="../assets/css/login-page/page.css" />
+    <link rel="stylesheet" href="../assets/css/login-page/widget.css" />
+    <link rel="stylesheet" href="../assets/css/login-page/media-queries.css" />
+    <link rel="stylesheet" href="../assets/css/pass-reset-page.css" />
+    <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+</head>
+
+<body>
+    <main>
+        <section id="section1">
+            <h1>Reset your password</h1>
+            <span>Sad to see that you have lost your password. Follow the steps mentioned below to set a new password for your account!</span>
+        </section>
+        <section id="section2">
+            <form name="email-form" onsubmit="submitEmail(event)">
+                <h1>Enter your Email ID</h1>
+                <span>For resetting your password, we will send you a 6-digit OTP on your registered Email ID to make sure it's you.</span>
+                <div class="input-container">
+                    <input type="text" name="email" placeholder="Email" onchange="validateEmail(this)" oninput="errorHide(this)" required />
+                    <div class="err-msg"></div>
+                </div>
+                <input type="submit" value="Get OTP" name="login-btn" />
+            </form>
+            <form name="otp-form" onsubmit="submitOTP(event)" hidden>
+                <h1>Enter OTP</h1>
+                <span>We have sent a 6-digit OTP to your email address <output id="email-id"></output>.</span>
+                <div class="input-container">
+                    <input type="text" name="otp" placeholder="OTP" onchange="validateOTP(this)" oninput="errorHide(this)" required />
+                    <div class="err-msg"></div>
+                </div>
+                <input type="submit" value="Verify OTP" name="login-btn" />
+                <div class="links">
+                    <a href="javascript:cancelEmail()">Wrong email</a>
+                    <a href="javascript:resendOTP()">Resend OTP</a>
+                </div>
+            </form>
+            <form name="new-pass-form" onsubmit="submitNewPass(event)" hidden>
+                <h1>Set a new password</h1>
+                <span>Your Email address have been verified successfully! Now, set a new password for your account.</span>
+                <div class="input-container pass-input">
+                    <input type="password" name="new-pass" placeholder="Password" oninput="getPass1(this)" required />
+                    <button onclick="togglePasswordView(this)" class="bx bx-show" type="button"></button>
+                </div>
+                <div class="input-container">
+                    <div class="pass-input">
+                        <input type="password" name="re-password" placeholder="Confirm password" onchange="checkPass(this)" oninput="errorHide(this.parentElement)" required />
+                        <button onclick="togglePasswordView(this)" class="bx bx-show" type="button"></button>
+                    </div>
+                    <div class="err-msg"></div>
+                </div>
+                <input type="submit" value="Get OTP" name="login-btn" />
+            </form>
+            <div id="spinner">
+                <span class="fa fa-spinner"></span>
+            </div>
+        </section>
+        <div id="progress"></div>
+    </main>
+    <section id="dialog-container">
+        <div>
+            <div></div>
+            <button></button>
+        </div>
+    </section>
+</body>
+
+<script src="../assets/js/pass-reset-page/main.js"></script>
+<script src="../assets/js/login-page/form-validation.js"></script>
+<script src="../assets/js/pass-reset-page/submit.js"></script>
+
+</html>
